@@ -40,17 +40,8 @@
       <change afterPath="$PROJECT_DIR$/../springbootnetty/src/main/resources/log4j2.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../wxapi/src/main/java/com/huang/wx/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../javaWeb/src/main/java/com/huang/springbootdemo/pojo/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/../javaWeb/src/main/java/com/huang/springbootdemo/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/DataSourcesConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/DataSourcesConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/ArticleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/PictureDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/PictureDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/PageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/view/my.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/view/my.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -138,7 +129,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
@@ -222,9 +213,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="449" />
+    <option name="y" value="5" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -351,6 +343,7 @@
     <property name="DatabaseDriversLRU" value="h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -609,7 +602,7 @@
       <updated>1571383093734</updated>
       <workItem from="1571383098395" duration="16003000" />
       <workItem from="1571443350236" duration="26968000" />
-      <workItem from="1571527821629" duration="9342000" />
+      <workItem from="1571527821629" duration="9944000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1571450529918</created>
@@ -629,10 +622,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52313000" />
+    <option name="totallyTimeSpent" value="52915000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="194" y="253" width="1382" height="744" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21860817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
