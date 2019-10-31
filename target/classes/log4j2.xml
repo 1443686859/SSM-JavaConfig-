@@ -91,7 +91,7 @@
         <logger name="org.mybatis" level="debug" additivity="false">
             <appenderref ref="Filelog"/>
         </logger>
-        <logger name="com.huang" level="info" additivity="false">
+        <logger name="com.huang.learning" level="info" additivity="false">
             <appenderref ref="Filelog"/>
         </logger>
 

@@ -5,6 +5,7 @@ import com.huang.learning.config.shiro.ShiroConfig;
 import com.huang.learning.config.datasource.TransactionManager;
 import org.springframework.context.annotation.*;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+//import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author huangkuanyi huang_kuan_yi@163.com
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
+@PropertySource("{classpath:Jwt.properties,classpath:redis.properties}")
 @Import({RedisConfig.class, ShiroConfig.class, TransactionManager.class}
 )
 @ComponentScan(basePackages = {"com.huang.learning.service"})

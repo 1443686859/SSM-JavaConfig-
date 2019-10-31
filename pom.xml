@@ -23,7 +23,7 @@
         <mybatis.version>3.2.5</mybatis.version>
         <mybatis-spring.version>1.2.2</mybatis-spring.version>
         <!-- spring版本 -->
-        <spring.version>4.2.6.RELEASE</spring.version>
+        <spring.version>5.2.0.RELEASE</spring.version>
         <!-- encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- autoconfig -->
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.13-beta-3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -146,11 +146,8 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!--  <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${spring.version}</version>
-          </dependency>-->
+
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
@@ -231,7 +228,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
-            <version>1.7.2.RELEASE</version>
+            <version>2.2.0.RELEASE</version>
             <exclusions>
                 <exclusion>
                     <artifactId>jcl-over-slf4j</artifactId>
@@ -241,6 +238,7 @@
                     <artifactId>slf4j-api</artifactId>
                     <groupId>org.slf4j</groupId>
                 </exclusion>
+
             </exclusions>
         </dependency>
         <dependency>
@@ -311,6 +309,12 @@
           <groupId>org.apache.logging.log4j</groupId>
           <artifactId>log4j-slf4j-impl</artifactId>
           <version>2.3</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- bridge, commons logging use log4j2 -->
         <dependency>
@@ -324,9 +328,29 @@
         <artifactId>jcl-over-slf4j</artifactId>
         <version>1.7.28</version>
         <scope>runtime</scope>
-    </dependency>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-</dependencies>
+        <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
 
 
     <build>
@@ -364,5 +388,15 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

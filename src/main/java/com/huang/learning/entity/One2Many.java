@@ -17,7 +17,7 @@ import java.util.Set;
  * 参见MyBatis  DefaultResultSetHandler.instantiateCollectionPropertyIfAppropriate()
  * @date: 2017/10/24 10:17
  */
-@Setter
+//@Setter
 public class One2Many extends JSONObject {
 	private Set<String> roleList;
 	private Set<String> menuList;

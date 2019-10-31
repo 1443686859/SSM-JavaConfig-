@@ -3,6 +3,7 @@ package com.huang.learning.config.core;
 
 import com.huang.learning.config.redis.RedisConfig;
 import com.huang.learning.config.shiro.ShiroConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.web.Log4jWebSupport;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
