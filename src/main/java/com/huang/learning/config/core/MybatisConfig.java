@@ -9,12 +9,10 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 import javax.sql.DataSource;
@@ -25,20 +23,22 @@ import java.util.Properties;
  * @date 2019/10/18 16:55
  */
 @Configuration
-//@Profile("dev")
+@Profile("dev")
+@EnableTransactionManagement
 @MapperScan(basePackages = "com.huang.learning.dao")
-@Import({DataSourcesConfig.class,TransactionManager.class})
+@Import(TransactionManager.class)
 public class MybatisConfig {
 
     @Autowired
     private DataSource dataSource;
 
     @Bean(name = "sqlSessionFactory")
+    //@Scope("singleton")
     public SqlSessionFactory createSqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("classpath:mapper/*Mapping.xml"));
+        sessionFactory.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
         //配置pageHelper
         sessionFactory.setPlugins(new Interceptor[]{pageHelper()});
         sessionFactory.setTypeAliasesPackage("com.huang.learning.entity");

@@ -1,6 +1,9 @@
 package com.huang.learning.config.redis;
 
 
+/*import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper*/;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,10 +31,10 @@ import redis.clients.jedis.JedisPoolConfig;
  * @author huangkuanyi huang_kuan_yi@163.com
  * @date 2019/10/20 11:05
  */
-@Component
+//@Component
 @EnableCaching
 @Configuration
-//@PropertySource("classpath:redis.properties")
+@PropertySource("classpath:redis.properties")
 //@ImportResource("")
 public class RedisConfig extends CachingConfigurerSupport {
 

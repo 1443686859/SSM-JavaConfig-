@@ -17,10 +17,10 @@ import java.util.Date;
  */
 @Controller
 public class TestController {
-        @RequestMapping(value = "/login",method = RequestMethod.GET)
+     /*   @RequestMapping(value = "/login",method = RequestMethod.GET)
         public String login(){
             return "my";
-        }
+        }*/
         @RequestMapping(value = "/index",method = RequestMethod.GET,produces = "text/html")
         @ResponseBody
         public void mapper(HttpServletRequest request, HttpServletResponse response) throws IOException {

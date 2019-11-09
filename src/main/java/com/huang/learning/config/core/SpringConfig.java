@@ -12,10 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @date 2019/10/18 16:58
  */
 @Configuration
-@EnableTransactionManagement
-@PropertySource("{classpath:Jwt.properties,classpath:redis.properties}")
-@Import({RedisConfig.class, ShiroConfig.class, TransactionManager.class}
-)
+@Import({ShiroConfig.class,RedisConfig.class})
 @ComponentScan(basePackages = {"com.huang.learning.service"})
 public class SpringConfig {
 

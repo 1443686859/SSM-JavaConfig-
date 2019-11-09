@@ -1,6 +1,9 @@
 package com.huang.learning.config.core;
 
 
+import com.huang.learning.config.JWT.JwtFilter;
+import com.huang.learning.config.datasource.DataSourcesConfig;
+import com.huang.learning.config.datasource.TransactionManager;
 import com.huang.learning.config.redis.RedisConfig;
 import com.huang.learning.config.shiro.ShiroConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -12,10 +15,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.Filter;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.*;
 
 /**
  * @author huangkuanyi huang_kuan_yi@163.com
@@ -23,18 +23,24 @@ import javax.servlet.ServletRegistration;
  */
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
-
-
     @Override
     public void onStartup(ServletContext context) throws ServletException {
         context.setInitParameter("spring.profiles.active","dev");
+        /*FilterRegistration.Dynamic encodingFilter=context.addFilter("encoding-filter",CharacterEncodingFilter.class);
+        encodingFilter.setInitParameter("encoding","UTF-8");
+        encodingFilter.setInitParameter("forceEncoding","true");
+        encodingFilter.setAsyncSupported(true);
+        encodingFilter.addMappingForUrlPatterns(null,true,"/*");
+        FilterRegistration.Dynamic jwtFilter =context.addFilter("JwtFilter",JwtFilter.class);
+        jwtFilter.setAsyncSupported(true);
+        jwtFilter.addMappingForUrlPatterns(null,true,"/*");*/
 //       context.setInitParameter("log4jConfiguration", "classpath:log4j2.xml");
         super.onStartup(context);
     }
     @Override
     protected Class<?>[] getRootConfigClasses() {
 
-        return new Class<?>[]{SpringConfig.class, MybatisConfig.class};
+        return new Class<?>[]{SpringConfig.class};
     }
 
     @Override
@@ -63,10 +69,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
      *
      * @return
      */
-    @Override
+  /*  @Override
     protected Filter[] getServletFilters() {
-        return new Filter[]{characterEncodingFilter()};
-    }
+        return new Filter[]{characterEncodingFilter(),new JwtFilter()};
+    }*/
     @Bean
     public CharacterEncodingFilter characterEncodingFilter() {
         //字符集过滤器

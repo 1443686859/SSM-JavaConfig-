@@ -1,7 +1,7 @@
 package com.huang.learning.config.shiro;
 
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonAnyFormatVisitor;
+//import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonAnyFormatVisitor;
 import com.huang.learning.service.LoginService;
 import com.huang.learning.service.UserService;
 import lombok.extern.slf4j.Slf4j;

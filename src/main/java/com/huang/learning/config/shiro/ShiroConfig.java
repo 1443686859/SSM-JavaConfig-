@@ -41,7 +41,6 @@ import java.util.Map;
  * @date 2019/10/20 16:11
  */
 @Configuration
-//@DeclareParents(SpringConfig.class)
 @Slf4j
 public class ShiroConfig {
     @Bean
@@ -51,23 +50,22 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         //拦截器.
-        log.info("----------------");
+        log.info("--------shiroconfig loading--------");
 
         Map<String, Filter> filterMap = new HashMap<>(16);
-        filterMap.put("jwtFilter", jwtFilterBean());
+        filterMap.put("auth", jwtFilterBean());
 
         shiroFilterFactoryBean.setFilters(filterMap);
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
         // 配置不会被拦截的链接 顺序判断
 
-
-        filterChainDefinitionMap.put("/**", "jwtFilter");
+        filterChainDefinitionMap.put("/login","anon");
+        filterChainDefinitionMap.put("/**", "auth");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
     @Bean
     @SuppressWarnings("all")
-//    @DependsOn({"userRealm"})
     public SecurityManager securityManager(MyRealm user, RedisTemplate<String,Object> redisTemplate) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(user);
@@ -99,17 +97,18 @@ public class ShiroConfig {
      * ）
      * 可以扩展凭证匹配器，实现 输入密码错误次数后锁定等功能，下一次
      */
-    @Bean(name = "credentialsMatcher")
+  /*  @Bean(name = "credentialsMatcher")
     public HashedCredentialsMatcher hashedCredentialsMatcher() {
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
         //散列算法:这里使用MD5算法;
         hashedCredentialsMatcher.setHashAlgorithmName("md5");
-        //散列的次数，比如散列两次，相当于 md5(md5(""));
+        //散列的次数，比如散列两次，相当于 md5(md5(""));hash迭代器
         hashedCredentialsMatcher.setHashIterations(2);
+
         //storedCredentialsHexEncoded默认是true，此时用的是密码加密用的是Hex编码；false时用Base64编码
         hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);
         return hashedCredentialsMatcher;
-    }
+    }*/
 
     @Bean("jwtFilter")
     public JwtFilter jwtFilterBean() {

@@ -17,6 +17,7 @@ import javax.sql.DataSource;
 @Configuration
 @Slf4j
 @PropertySource( value="classpath:h2DataBase.properties")
+@Scope("singleton")
 public class DataSourcesConfig {
 
     @Value("${spring.datasource.url}")
@@ -30,7 +31,7 @@ public class DataSourcesConfig {
     @Profile("dev")
     @Bean(name = "dataSource")
     public DataSource dataSource(){
-        log.info("-------------------------------info database---------------");
+        System.out.println("-------------------------------info database---------------");
         DriverManagerDataSource driverManagerDataSource=new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("org.h2.Driver");
         driverManagerDataSource.setUsername(userName);

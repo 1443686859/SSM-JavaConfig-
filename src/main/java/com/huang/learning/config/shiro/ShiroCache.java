@@ -5,6 +5,7 @@ import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 //import org.apache.shiro.dao.DataAccessException;
 //import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ShiroCache<S,V> implements Cache<S,V>{
     private  String shiroCacheExpireTime="600";
+    @Autowired
     private RedisTemplate<String,Object> redisTemplate;
     public ShiroCache(RedisTemplate redisTemplate) {
     this.redisTemplate=redisTemplate;
