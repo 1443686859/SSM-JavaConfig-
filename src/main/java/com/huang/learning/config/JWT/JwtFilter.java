@@ -1,12 +1,13 @@
 package com.huang.learning.config.JWT;
 
-import com.huang.learning.config.redis.RedisClient;
 import com.huang.learning.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
-import javax.servlet.*;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
@@ -14,7 +15,6 @@ import java.io.IOException;
  * @author hky
  */
 @Slf4j
-//@PropertySource("classpath:Jwt.properties")
 public class JwtFilter extends AccessControlFilter {
 
 

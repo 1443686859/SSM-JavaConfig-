@@ -1,5 +1,6 @@
 package com.huang.learning.controller;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,13 +16,12 @@ import java.util.Date;
  * @author huangkuanyi huang_kuan_yi@163.com
  * @date 2019/10/24 9:24
  */
+@Component
 @Controller
 public class TestController {
-     /*   @RequestMapping(value = "/login",method = RequestMethod.GET)
-        public String login(){
-            return "my";
-        }*/
-        @RequestMapping(value = "/index",method = RequestMethod.GET,produces = "text/html")
+
+
+        @RequestMapping(path = {"/index"},method = RequestMethod.GET,produces = "text/html")
         @ResponseBody
         public void mapper(HttpServletRequest request, HttpServletResponse response) throws IOException {
             Date now = new Date( );

@@ -3,19 +3,18 @@ package com.huang.learning.config.shiro;
 import com.huang.learning.util.JwtUtil;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
-//import org.apache.shiro.dao.DataAccessException;
-//import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 
-import java.sql.Time;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+//import org.apache.shiro.dao.DataAccessException;
+//import org.springframework.data.redis.connection.RedisConnection;
+
+@Component
 public class ShiroCache<S,V> implements Cache<S,V>{
     private  String shiroCacheExpireTime="600";
     @Autowired

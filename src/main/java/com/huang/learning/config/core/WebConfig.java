@@ -2,20 +2,16 @@ package com.huang.learning.config.core;
 
 
 import com.huang.learning.config.JWT.JwtFilter;
-import com.huang.learning.config.datasource.DataSourcesConfig;
-import com.huang.learning.config.datasource.TransactionManager;
-import com.huang.learning.config.redis.RedisConfig;
-import com.huang.learning.config.shiro.ShiroConfig;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.web.Log4jWebSupport;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Import;
-import org.springframework.web.context.ConfigurableWebEnvironment;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.*;
+import javax.servlet.Filter;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
+
+//import com.huang.learning.config.redis.RedisConfig;
 
 /**
  * @author huangkuanyi huang_kuan_yi@163.com
@@ -39,18 +35,20 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     }
     @Override
     protected Class<?>[] getRootConfigClasses() {
-
+        System.out.println("---------------context---------");
         return new Class<?>[]{SpringConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
+        System.out.println("------------------servlet--------------");
         return new Class<?>[]{SpringMVCConfig.class};
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/"};
+        System.out.println("----------------path------------");
+        return new String[]{"/*"};
     }
 
     /**
@@ -69,10 +67,11 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
      *
      * @return
      */
-  /*  @Override
+    @Override
     protected Filter[] getServletFilters() {
         return new Filter[]{characterEncodingFilter(),new JwtFilter()};
-    }*/
+    }
+
     @Bean
     public CharacterEncodingFilter characterEncodingFilter() {
         //字符集过滤器

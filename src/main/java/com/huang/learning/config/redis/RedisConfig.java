@@ -3,70 +3,63 @@ package com.huang.learning.config.redis;
 
 /*import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper*/;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.ObjectMapper*/import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.data.annotation.AccessType;
-import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.stereotype.Component;
 import redis.clients.jedis.JedisPoolConfig;
+
+;
 
 
 /**
  * @author huangkuanyi huang_kuan_yi@163.com
  * @date 2019/10/20 11:05
  */
-//@Component
-@EnableCaching
+
+//@Componen
 @Configuration
-@PropertySource("classpath:redis.properties")
-//@ImportResource("")
+@PropertySource(value = "classpath:redis.properties",encoding = "UTF-8")
 public class RedisConfig extends CachingConfigurerSupport {
 
-    @Value("${redis.host}")
-    private String host;
-    @Value("${redis.port}")
-    private int port;
-    @Value("${redis.password}")
-    private String password;
-    @Value("${redis.maxIdle}")
-    private int  maxIdle;
-    @Value("${redis.maxTotal}")
-    private int maxTotal;
-    @Value("${redis.maxWaitMillis}")
-    private Integer maxWaitMillis;
-    @Value("${redis.testOnBorrow}")
-    private Boolean testOnBorrow;
-    @Value("${redis.blockWhenExhausted}")
-    private Boolean blockWhenExhausted;
-    @Value("${redis.timeout}")
-    private int timeout;
-    @Value("${redis.expiration}")
-    private int defaultExpireTime;
+//    @Value("${redis.host}")
+    private String host="127.0.0.1";
+    //@Value("${redis.port}")
+    private int port=6379;
+    //@Value("${redis.password}")
+    private String password="";
+    //@Value("${redis.maxIdle}")
+    private int  maxIdle=400;
+    //@Value("${redis.maxTotal}")
+    private int maxTotal=6000;
+   // @Value("${redis.maxWaitMillis}")
+    private int maxWaitMillis=1000;
+    //@Value("${redis.testOnBorrow}")
+    private boolean testOnBorrow=true;
+    //@Value("${redis.blockWhenExhausted}")
+    private boolean blockWhenExhausted=true;
+//    @Value("${redis.timeout}")
+    private int timeout=100000;
+//    @Value("${redis.expiration}")
+    private int defaultExpireTime=36000;
+
 
     @Bean(name="jedisPoolConfig")
     public JedisPoolConfig jedisPoolConfig() {
+        System.out.println(toString());
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxTotal(maxTotal);
-        jedisPoolConfig.setMaxIdle(maxIdle);
-        jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);;
-        jedisPoolConfig.setTestOnBorrow(testOnBorrow);
-        jedisPoolConfig.setBlockWhenExhausted(blockWhenExhausted);
+        jedisPoolConfig.setMaxTotal(Integer.valueOf(maxTotal));
+        jedisPoolConfig.setMaxIdle(Integer.valueOf(maxIdle));
+        jedisPoolConfig.setMaxWaitMillis(Integer.valueOf(maxWaitMillis));;
+        jedisPoolConfig.setTestOnBorrow(Boolean.valueOf(testOnBorrow));
+        jedisPoolConfig.setBlockWhenExhausted(Boolean.valueOf(blockWhenExhausted));
 //        jedisPoolConfig.setTime
         return jedisPoolConfig;
     }
@@ -75,10 +68,11 @@ public class RedisConfig extends CachingConfigurerSupport {
      */
     @Bean(name="jedisConnectionFactory")
     public JedisConnectionFactory jedisConnectionFactory() {
+        //System.out.println(toString());
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setHostName(host);
-        jedisConnectionFactory.setPort(port);
-        jedisConnectionFactory.setTimeout(timeout);
+        jedisConnectionFactory.setPort(Integer.valueOf(port));
+        jedisConnectionFactory.setTimeout(Integer.valueOf(timeout));
         jedisConnectionFactory.setPoolConfig(jedisPoolConfig());
         return jedisConnectionFactory;
     }
@@ -121,4 +115,19 @@ public class RedisConfig extends CachingConfigurerSupport {
         return redisTemplate;
     }
 
+    @Override
+    public String toString() {
+        return "RedisConfig{" +
+                "host='" + host + '\'' +
+                ", port='" + port + '\'' +
+                ", password='" + password + '\'' +
+                ", maxIdle='" + maxIdle + '\'' +
+                ", maxTotal='" + maxTotal + '\'' +
+                ", maxWaitMillis='" + maxWaitMillis + '\'' +
+                ", testOnBorrow='" + testOnBorrow + '\'' +
+                ", blockWhenExhausted='" + blockWhenExhausted + '\'' +
+                ", timeout='" + timeout + '\'' +
+                ", defaultExpireTime='" + defaultExpireTime + '\'' +
+                '}';
+    }
 }

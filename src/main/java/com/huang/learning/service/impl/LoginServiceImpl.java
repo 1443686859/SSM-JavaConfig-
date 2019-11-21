@@ -1,7 +1,6 @@
 package com.huang.learning.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-
 import com.huang.learning.dao.LoginDao;
 import com.huang.learning.service.LoginService;
 import com.huang.learning.service.PermissionService;
@@ -31,6 +30,7 @@ public class LoginServiceImpl implements LoginService {
 		String username = jsonObject.getString("username");
 		String password = jsonObject.getString("password");
 		JSONObject info = new JSONObject();
+
 		Subject currentUser = SecurityUtils.getSubject();
 		UsernamePasswordToken token = new UsernamePasswordToken(username, password);
 		try {

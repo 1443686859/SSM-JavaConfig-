@@ -1,14 +1,13 @@
 package com.huang.learning.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-
 import com.huang.learning.dao.ArticleDao;
 import com.huang.learning.service.ArticleService;
 import com.huang.learning.util.CommonUtil;
 import com.huang.learning.util.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -18,8 +17,10 @@ import java.util.List;
  * @date: 2017/10/24 16:07
  */
 @Service
+@DependsOn("articleDao")
 public class ArticleServiceImpl implements ArticleService {
 
+	//@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 	@Autowired
 	private ArticleDao articleDao;
 

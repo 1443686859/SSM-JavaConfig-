@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a13c4dd5-d15c-4de4-9e02-67bcdbfc158c" name="Default Changelist" comment="配置shiro filter过滤jwt token">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/view/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="a13c4dd5-d15c-4de4-9e02-67bcdbfc158c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/MyFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resoures/mapper/ArticleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resoures/mapper/PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resoures/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/JWT/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/JWT/JwtFilter.java" afterDir="false" />
@@ -16,10 +18,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/SpringMVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/SpringMVCConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/core/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/DataSourcesConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/DataSourcesConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/TransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/DataSourcesConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/TransactionManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/redis/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/MyRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/ShiroCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/ShiroCache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/ShiroCacheManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/ShiroCacheManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/config/shiro/ShiroConfig.java" afterDir="false" />
@@ -27,66 +28,58 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/ArticleDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/LoginDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/util/JSONUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/util/JSONUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/PermissionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/PermissionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huang/learning/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huang/learning/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resoures/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resoures/db/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resoures/mapper/ArticleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resoures/mapper/PermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resoures/mapper/UserMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/MybatisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/MybatisConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/SpringConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/SpringMVCConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/SpringMVCConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/core/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/datasource/DataSourcesConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/datasource/DataSourcesConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/datasource/TransactionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/datasource/TransactionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/datasource/DataSourcesConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/datasource/TransactionManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/redis/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/redis/RedisConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/config/shiro/ShiroConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/ArticleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/ArticleDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/LoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/LoginDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/PermissionDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/PermissionDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/ArticleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/ArticleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/LoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/LoginServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/PermissionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/PermissionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huang/learning/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/MybatisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/MybatisConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/SpringConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/SpringMVCConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/SpringMVCConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/core/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/datasource/DataSourcesConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/datasource/DataSourcesConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/datasource/TransactionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/datasource/TransactionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/datasource/DataSourcesConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/datasource/TransactionManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/redis/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/redis/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/shiro/MyRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/shiro/MyRealm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/config/shiro/ShiroConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/ArticleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/ArticleDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/LoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/LoginDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/entity/One2Many.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/entity/One2Many.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/PermissionDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/PermissionDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/ArticleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/ArticleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/util/RedisUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/db/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/ArticleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/LoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/LoginMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/PermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-aop-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-beans-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-context-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-context-support-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-core-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-data-commons-1.12.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-data-keyvalue-1.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-data-redis-1.7.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-expression-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-jdbc-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-oxm-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-tx-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-web-4.2.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/spring-webmvc-4.2.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/LoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/LoginServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/PermissionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/PermissionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/com/huang/learning/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/commons-pool2-2.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/lib/jedis-2.9.0.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
@@ -123,6 +116,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -170,16 +164,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/huang/learning/util" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="A:\Project\ssm\src\main\webapp\WEB-INF\classes\view" />
-      <recent name="A:\Project\ssm\src\main\resoures\db" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\util" />
+      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\config\core" />
+      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\service" />
+      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\dao" />
+      <recent name="A:\Project\ssm\src\main\resoures" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.huang.learning.config.redis" />
@@ -188,22 +185,19 @@
       <recent name="com.huang.learning.entity" />
       <recent name="com.huang.learning.util" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\util" />
-      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\config\core" />
-      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\service" />
-      <recent name="A:\Project\ssm\src\main\java\com\huang\learning\dao" />
-      <recent name="A:\Project\ssm\src\main\resoures" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\Project\ssm\src\main\webapp\WEB-INF\classes\view" />
+      <recent name="A:\Project\ssm\src\main\resoures\db" />
     </key>
   </component>
   <component name="RestServicesNavigator">
     <treeState>
       <expand>
         <path>
-          <item name="Found 2 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 3 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 2 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 3 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="ssm" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
@@ -487,6 +481,9 @@
     </option>
   </component>
   <component name="SpringBeansView">
+    <option name="showFiles" value="false" />
+    <option name="showImplicitBeans" value="false" />
+    <option name="showDoc" value="false" />
     <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="SvnConfiguration">
@@ -547,6 +544,16 @@
       <workItem from="1572503046616" duration="2975000" />
       <workItem from="1573088494973" duration="8934000" />
       <workItem from="1573171067967" duration="27783000" />
+      <workItem from="1573280609633" duration="6390000" />
+      <workItem from="1573288443629" duration="5510000" />
+      <workItem from="1573310905667" duration="5923000" />
+      <workItem from="1573317026607" duration="1084000" />
+      <workItem from="1573340916331" duration="16518000" />
+      <workItem from="1573379189958" duration="12549000" />
+      <workItem from="1573401867879" duration="1293000" />
+      <workItem from="1573403375461" duration="357000" />
+      <workItem from="1573431381266" duration="9332000" />
+      <workItem from="1574307148586" duration="267000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1571450529918</created>
@@ -596,6 +603,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -638,23 +655,30 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/controller/LoginController.java</url>
-          <line>18</line>
-          <properties class="com.huang.learning.controller.LoginController" method="authLogin">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="4" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/ArticleServiceImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/config/JWT/JwtFilter.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/config/datasource/DataSourcesConfig.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/service/impl/LoginServiceImpl.java</url>
           <line>34</line>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/controller/LoginController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/huang/learning/controller/LoginController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

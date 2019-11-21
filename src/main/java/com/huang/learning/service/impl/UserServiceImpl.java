@@ -1,13 +1,13 @@
 package com.huang.learning.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-
 import com.huang.learning.common.Status;
 import com.huang.learning.dao.UserDao;
 import com.huang.learning.service.UserService;
 import com.huang.learning.util.CommonUtil;
 import com.huang.learning.util.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +22,9 @@ import java.util.Set;
  * @date: 2017/11/2 10:18
  */
 @Service
+@DependsOn("userDao")
 public class UserServiceImpl implements UserService {
+
 	@Autowired
 	private UserDao userDao;
 

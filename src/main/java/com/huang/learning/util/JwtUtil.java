@@ -24,7 +24,7 @@ import java.util.Date;
  */
 @Component
 @Slf4j
-@PropertySource("classpath:Jwt.properties")
+@PropertySource({"classpath:Jwt.properties"})
 public class JwtUtil {
 
 
