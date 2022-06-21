@@ -19,7 +19,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <!-- 数据库相关版本 -->
-        <jdbc.driver.version>5.1.25</jdbc.driver.version>
+        <jdbc.driver.version>8.0.28</jdbc.driver.version>
         <mybatis.version>3.2.5</mybatis.version>
         <mybatis-spring.version>1.2.2</mybatis-spring.version>
         <!-- spring版本 -->
